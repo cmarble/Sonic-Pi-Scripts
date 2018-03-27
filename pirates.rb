@@ -21,7 +21,7 @@ define :quarter do |note1, note2, note3|
 end
 
 
-live_loop :piano dos
+live_loop :piano do
   use_synth :piano
   7.times do
     beginning :d3 #piano
@@ -34,8 +34,11 @@ live_loop :piano dos
     beginning :d3
   end
   
-  quarter :g3, :f3, :a3 #piano
+  quarter :g3, :f3, :e3 #piano
   
+  3.times do #piano
+    beginning :d3
+  end
   
   
   stop
@@ -57,13 +60,19 @@ live_loop :cello do
   
   quarter :d2, :d2, :d2
   
-  
+  3.times do
+    beginning :d2
+  end
   
   stop
 end
+sleep 22.5
+
 live_loop :melody1 do
   use_synth :piano
-  sleep 23.5
+  play :a3
+  sleep 0.5
+  play :c4
   sleep 0.5
   play :d4
   sleep 1
@@ -128,7 +137,9 @@ end
 
 live_loop :melody2 do
   use_synth :fm
-  sleep 23.5
+  play :a2
+  sleep 0.5
+  play :c3
   sleep 0.5
   play :d2
   sleep 1
@@ -191,8 +202,3 @@ live_loop :melody2 do
   sleep 3
   stop
 end
-
-
-
-
-
